@@ -1,3 +1,13 @@
+Dateien auf github.com hochladen:
+Voraussetzung: github-Account
+
+git add .
+git commit -m "..."
+git push -u origin master
+
+
+
+
 Git-Kommandos:
 
 nano Dateiname.txt
