@@ -17,3 +17,11 @@ git commit -m "Änderungsname"
 neuen Branch erstellen: git checkout -b ... master
 Branch löschen:        git branch -d ... 
 
+
+
+Datei überarbeiten:
+nano Dateiname.txt
+git add Dateiname.txt
+git commit -m "..."
+git push
+Benutzername + PW eingeben
