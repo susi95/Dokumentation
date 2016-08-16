@@ -13,3 +13,7 @@ Git-Kommandos:
 nano Dateiname.txt
 git add Dateiname.txt
 git commit -m "Änderungsname"
+
+neuen Brach erstellen: git checkout -b ... master
+Brachn löschen:        git branch -d ...
+
