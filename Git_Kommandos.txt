@@ -1,0 +1,5 @@
+Git-Kommandos:
+
+nano Dateiname.txt
+git add Dateiname.txt
+git commit -m "Änderungsname"
