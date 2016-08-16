@@ -1,0 +1,40 @@
+Wordpress auf Ubuntu installieren (mittels Terminal):
+
+sudo apt-get install apache2
+sudo apt-get install libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json
+sudo apt-get install mysql-server
+sudo mysql -u root -p
+
+in mysql:
+create database wordpress;
+create user 'wordpress'@'localhost' identified by 'password';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost';
+FLUSH PRIVILEGES;
+exit
+
+cd /var/www/
+sudo wget https://wordpress.org/latest.tar.gz
+sudo tar xvfz latest.tar.gz -C html/
+cd html/
+ls
+ls -la
+sudo chown www-data.www-data -R wordpress/
+sudo service apache2 restart
+
+
+
+in Firefox: localhost/wordpress/ -> Anleitung folgen
+
+
+
+
+mittels Let's Encrypt kostenloses SSL-Zertifikat erstellen, um eigene Website zu verschlüsseln
+Git installieren: sudo apt-get install git
+Python installieren (prüft Voraussetzungen;meldet, wenn etwas fehlt)   	sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7
+									sudo apt-get update
+									sudo apt-get install python2.7
+git clone https://github.com/letsencrypt/letsencrypt
+cd letsencrypt
+./letsencrypt-auto --rsa-key-size 4096
+Domain eingeben
+Email eingeben (erinnert an Erneuerung des SSL_Zertifikates)
