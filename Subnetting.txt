@@ -1,0 +1,42 @@
+Aufgabe 1:
+Gegeben ist eine IP-Adresse: 192.168.4.1 mit der Netzmaske 255.255.255.0
+
+1. Ermittle die Anteile für Netz und Hosts.
+2. Wie viele Hosts würden in das Ausgangsnetz passen?
+3. Erschaffe 4 Teilnetze. Wie viele Clients passen maximal in jedes Subnetz?
+
+
+zu 1.:
+Netzmaske in binärer Schreibweise: 11111111.11111111.11111111.00000000
+					-> es sind 24 x 1 und 8 x 0
+Das Netz hat einen Anteil von 24 bits und die Hosts einen Anteil von 8 bits.
+
+
+zu 2.:
+Durch die Netzmaske ergeben sich 256 freie IP-Adressen. Da an das Netz und den Broadcast eine IP-Adresse vergeben wird, sind für die Hosts noch 254 freie
+IP-Adressen verfügbar.
+
+
+zu 3.:
+Da 4 Teilnetze erstellt werden sollen, muss der Hostanteil mit 2 bits (2²=4) erweitert werden.
+
+255.255.255.  |00000000
+255.255.255.11|000000
+
+jedem Subnetz stehen also 64 IP-Adressen zur Verfügung, da der Hostanteil nun aus 6 bits besteht (2⁶=64), wobei nur 62 freie IP-Adressen für Clients sind, 
+da man Netz- und Broadcastadresse abziehen muss
+1.Netz: Subnetz: 192.168.4.0
+	Range: 192.168.4.1 - 192.168.4.62
+	Broadcast: 192.168.4.63
+
+2.Netz: Subnetz: 192.168.4.64
+	Range: 192.168.4.65 - 192.168.4.126
+	Broadcast: 192.168.4.127
+
+3.Netz: Subnetz: 192.168.4.128
+	Range: 192.168.4.129 - 192.168.4.190
+	Broadcast: 192.168.4.191
+
+4.Netz: Subnetz: 192.168.4.192
+	Range: 192.168.4.193 - 192.168.4.254
+	Broadcast:192.168.4.255
