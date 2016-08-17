@@ -13,9 +13,13 @@ Git-Kommandos:
 nano Dateiname.txt
 git add Dateiname.txt
 git commit -m "Änderungsname"
-
-neuen Branch erstellen: git checkout -b ... master
-Branch löschen:        git branch -d ... 
+git branch --merged master                      (List all branches that are already merged into master)
+git branch -d <branchname>                      (delete local branch)
+git branch -a                                   (list of all local & remote branches)
+git log --no-merges --raw --since='2 weeks ago' (What changed since two weeks?)
+git branch -m <new-branch-name>                 (rename a branch)
+git rev-parse --abbrev-ref HEAD                 (get the name of the current branch)
+git checkout -b ... master			(add new branch)
 
 
 
