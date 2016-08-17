@@ -1,4 +1,4 @@
-Dateien auf github.com hochladen:
+## Dateien auf github.com hochladen:
 Voraussetzung: github-Account
 
 git add .
@@ -8,7 +8,7 @@ git push -u origin master
 
 
 
-Git-Kommandos:
+## Git-Kommandos:
 
 nano Dateiname.txt
 git add Dateiname.txt
@@ -21,10 +21,10 @@ git log --no-merges --raw --since='2 weeks ago' (What changed since two weeks?)
 git branch -m <new-branch-name>                 (rename a branch)
 git rev-parse --abbrev-ref HEAD                 (get the name of the current branch)
 git checkout -b ... master			(add new branch)
+git rebase --interactive                        (edit commits BEFORE PUBLISHING!!)
 
 
-
-Datei überarbeiten:
+## Datei überarbeiten:
 nano Dateiname.txt
 git add Dateiname.txt
 git commit -m "..."
