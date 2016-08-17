@@ -15,6 +15,7 @@ git add Dateiname.txt
 git commit -m "Änderungsname"
 git branch --merged master                      (List all branches that are already merged into master)
 git branch -d <branchname>                      (delete local branch)
+git push origin --delete <remote_branchname>    (delete remote branch)
 git branch -a                                   (list of all local & remote branches)
 git log --no-merges --raw --since='2 weeks ago' (What changed since two weeks?)
 git branch -m <new-branch-name>                 (rename a branch)
