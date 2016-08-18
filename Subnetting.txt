@@ -25,6 +25,7 @@ Da 4 Teilnetze erstellt werden sollen, muss der Hostanteil mit 2 bits (2²=4) er
 
 jedem Subnetz stehen also 64 IP-Adressen zur Verfügung, da der Hostanteil nun aus 6 bits besteht (2⁶=64), wobei nur 62 freie IP-Adressen für Clients sind, 
 da man Netz- und Broadcastadresse abziehen muss
+
 1.Netz: Subnetz: 192.168.4.0
 	Range: 192.168.4.1 - 192.168.4.62
 	Broadcast: 192.168.4.63
@@ -40,3 +41,30 @@ da man Netz- und Broadcastadresse abziehen muss
 4.Netz: Subnetz: 192.168.4.192
 	Range: 192.168.4.193 - 192.168.4.254
 	Broadcast:192.168.4.255
+
+
+
+
+
+
+
+Aufgabe 2:
+Netzwerk 134.12.3.64/26
+
+1. Wieviele Rechner können maximal in dem Netzwerk mit IP-Adressen versehen werden?
+2. Der zugeteilte Adressraum soll in Subnetze mit jeweils 23, 12, 5, 4 Rechnern aufgeteilt werden. 
+
+zu 1.:
+/26 = 64 IP-Adressen, abzüglich der Netz- und Broadcastadresse bleiben für die Rechner noch 62 IP-Adressen übrig
+
+
+zu 2.:
+	Netzadresse (CIDR)	Subnetzmaske		1.Rechner	letzter Rechner		Broadcast
+Netz 1	134.12.3.64		255.255.255.193		134.12.3.65	134.12.3.87		134.12.3.88
+	
+Netz 2	134.12.3.89		255.255.255.193		134.12.3.90	134.12.3.102		134.12.3.103
+	
+Netz 3	134.12.3.104		255.255.255.193		134.12.3.105	134.12.3.112		134.12.3.113
+	
+Netz 4	134.12.3.114		255.255.255.193		134.12.3.115	134.12.3.124		134.12.3.125
+	
