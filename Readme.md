@@ -3,7 +3,7 @@
 open Terminal with the shortcut Ctrl+Alt+T
 #
 #
-$ clear	?ts=6clears the current window
+$ clear	?ts=6 clears the current window
 #
 $ cd /folder/folder					##go in a particular folder
 #
