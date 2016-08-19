@@ -127,3 +127,83 @@ Subnetze hinzukommen. Der Bereich, der zur Verfügung steht ist 11.10.160.0/22
 	1.IP:		11.10.160.151
 	letze IP:	11.10.161.43
 	Broadcast:	11.10.161.44
+
+
+
+
+
+
+
+5. AUfgabe:
+Klasse B Netz mit der IP: 130.108.0.0 und der Subnetzmaske: 255.255.255.224 soll in 8 Subnetze unterteilt werden. Wie sind die IP-Adressbereiche der einzelnen
+Subnetze?
+
+
+255.255.255.224 = 11111111.11111111.11111111.11100000 = /27 
+Der Hostanteil muss mit 3 bits erweitert werden -> 11111111.11111111.11111111.11111100 = 255.255.255.252
+Der Hostanteil besteht jetzt nur noch aus 2 bits (Hostanteil immer der Anteil mit 0)
+2² = 4 -> für jedes Netz stehen 4 IP-Adressen zur Verfügung
+
+1.Netz: Netzadresse: 130.108.0.0			5.Netz: Netzadresse: 130.108.0.16
+	1.IP: 130.108.0.1					1.IP: 130.108.0.17
+	letze IP: 130.108.0.2					letze IP: 130.108.0.18
+	Broadcast: 130.108.0.3					Broadcast: 130.108.0.19
+
+2.Netz: Netzadresse: 130.108.0.4			6.Netz: Netzadresse: 130.108.0.20
+	1.IP: 130.108.0.5					1.IP: 130.108.0.21
+	letze IP: 130.108.0.6					letze IP: 130.108.0.22
+	Broadcast: 130.108.0.7					Broadcast: 130.108.0.23
+
+3.Netz: Netzadresse: 130.108.0.8			7.Netz: Netzadresse: 130.108.0.24
+	1.IP: 130.108.0.9					1.IP: 130.108.0.25
+	letze IP: 130.108.0.10					letze IP: 130.108.0.26
+	Broadcast: 130.108.0.11					Broadcast: 130.108.0.27
+
+4.Netz: Netzadresse: 130.108.0.12			8.Netz: Netzadresse: 130.108.0.28
+	1.IP: 130.108.0.13					1.IP: 130.108.0.29
+	letze IP: 130.108.0.14					letze IP: 130.108.0.30
+	Broadcast 130.108.0.15					Broadcast: 130.108.0.31
+
+
+
+
+
+
+
+6. Aufgabe:
+Einer Firma wurden die Adressbereiche 131.159.32.0/22 und 131.159.36.0/24 zugewiesen. Nach reiflicher Überlegung ergaben sich folgende Anforderungen an die
+Subnetze und die Mindestanzahl nutzbarer IP-Adressen:
+
+Subnetz	1.Netz	2.Netz	3.Netz	4.Netz	5.Netz
+IPs	300	300	15	40	4
+
+
+1. Gib jeweils die erste und die letze IP-Adresse der vergebenen Adressbereiche an.
+2. Wie viele IP-Adressen stehen der Firma insgesamt zur Verfügung? Können davon alle für Hosts verwendet werden?
+
+
+zu 1.:
+/22 = 255.255.252.0	-> 11111111.11111111.11111100.00000000 -> 1024 IP-Adressen
+/24 = 255.255.255.0	-> 11111111.11111111.11111111.00000000 -> 256 IP-Adressen
+
+
+
+1.Netz:
+1.IP: 131.159.32.1
+letzte IP: 131.159.33.42
+
+2.Netz:
+1.IP: 131.159.33.45
+letzte IP: 131.159.34.88
+
+3.Netz:
+1.IP: 131.159.36.1
+letzte IP: 131.159.36.13
+
+4.Netz:
+1.IP: 131.159.36.16
+letzte IP: 131.159.36.53
+
+5.Netz:
+1.IP: 131.159.36.56
+letzte IP: 131.159.36.59
