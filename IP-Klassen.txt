@@ -1,0 +1,27 @@
+Classful IP Adressing
+
+- veraltete Form der IP-Adressen-Einteilung
+- anfangs nur 3 Klassen: A, B, C
+- später kamen noch D und E dazu
+
+Klasse A:
+IP-Adressen beginnen mit Bit 0
+sind 128 einzelne Klasse-A-Netzwerke von 0.x.x.x bis 127.x.x.x möglich, wobei 0.0.0.0 und 127.0.0.0 für internet-technische Zwecke reserviert sind
+
+Klasse B:
+beginnen mit der Bitfolge 1-0
+es lassen sich 16.384 einzelne Klasse-B-Netzwerke von 128.0.x.x bis 191.255.x.x mit jeweils 65.534 einzelnen IP-Adressen bilden
+
+Klasse C:
+beginnen mit der Bitfolge 1-1-0
+es lassen sich 2.097.152 einzelne Klasse-C-Netzwerke von 192.0.0.x bis 223.255.255.x mit jeweils 254 einzelnen IP-Adressen darstellen
+
+Klasse D:
+beginnt mit der Bitfolge 1-1-1-0
+Adressbereich liegt zwischen 224.x.x.x bis 239.x.x.x
+Adressbereich ist für Multicasting-Anwendungen reserviert
+
+Klasse E:
+beginnt mit der Bitfolge 1-1-1-1
+Adressbereich liegt zwischen 240.x.x.x bis 255.x.x.x
+ist für experimentelle und zukünftige Anwendungen reserviert
