@@ -6,10 +6,11 @@ OSI-Schichten-Modell
 - Zweck: Kommunikation soll über unterschiedlichste technische Systeme hinweg ermöglicht werden, Weiterentwicklung begünstigen
 - 7 Schichten, die klar voneinander definiert sind
 - jede Schicht kommuniziert mit der über- und untergeordneten Schicht über definierte Schnittstellen
-- jede Schicht prüft die Zieladresse des empfangenen Datenpakets, falls die eigene Adresse nicht vorhanden ist, wird das Paket zur nächsten Schicht weitergereicht
+- jede Schicht prüft die Zieladresse des empfangenen Datenpakets, falls die eigene Adresse nicht vorhanden ist, wird das Paket 
+  zur nächsten Schicht weitergereicht
 
-Same-Layer Interaction = wenn zwei Computer miteinander kommunizieren, unterstellt die Software jeder Schicht, dass sie genau mit derselben Schicht des
-			 anderen Computers kommuniziert
+Same-Layer Interaction = wenn zwei Computer miteinander kommunizieren, unterstellt die Software jeder Schicht, dass sie genau 
+mit derselben Schicht des anderen Computers kommuniziert
 
 
 7. Schicht: Anwendungsschicht
@@ -24,24 +25,24 @@ Definitionen der Schichten:
 
 Bitübertragungsschicht: übertragt Bits von einem Computer zu einem anderen; nachrichtentechnische Hilfsmittel für die Bitübertragung
 
-Verbindungsschicht: bildet aus den Bits der Bitübertragungsschicht und aus den Paketen der Vermittlungsschicht Frames; zuständig für den Transport
-		    der Frames zwischen den Computern
+Verbindungsschicht: bildet aus den Bits der Bitübertragungsschicht und aus den Paketen der Vermittlungsschicht Frames; 
+		    zuständig für den Transport der Frames zwischen den Computern
 
-Vermittlungsschicht: adressiert Nachrichten und übersetzt logische Adressen und Namen in physikalische Adressen; bestimmt Route vom Quell- zum Zielcomputer
-		     -> hier erfolgt Routing (Wegbestimmung im Netz)
+Vermittlungsschicht: adressiert Nachrichten und übersetzt logische Adressen und Namen in physikalische Adressen; bestimmt Route vom 
+		     Quell- zum Zielcomputer -> hier erfolgt Routing (Wegbestimmung im Netz)
 
-Transportschicht: Fehlererkennung und -behebung; lange Nachrichten werden, falls nötig, in kleinere Segmente zerlegt oder wieder zusammengesetzt; empfangende 
-		  Transportschicht kann Empfangsbestätigungen senden; bildet logische Ende-zu-Ende-Verbindungen 
+Transportschicht: Fehlererkennung und -behebung; lange Nachrichten werden, falls nötig, in kleinere Segmente zerlegt oder wieder 
+		  zusammengesetzt; empfangende Transportschicht kann Empfangsbestätigungen senden; bildet logische Ende-zu-Ende-Verbindungen 
 
-Kommunikationssteuerungsschicht: unterste Schicht der andwendungsorientierten Schichten; erlaubt zwei Anwendungen, auf verschiedene Konversationen oder Sitzungen aufzubauen, zu verwenden und 
-				 abzubauen = Prozess-zu-Prozess-Verbindungen
+Kommunikationssteuerungsschicht: unterste Schicht der andwendungsorientierten Schichten; erlaubt zwei Anwendungen, auf verschiedene 
+				 Konversationen oder Sitzungen aufzubauen, zu verwenden und abzubauen = Prozess-zu-Prozess-Verbindungen
 
-Darstellungsschicht: transformiert Daten in Standardformate (JPEG, BCD, ASCII-Text,...); neben Interpretation und Umsetzung der Daten auch Verschlüsselung und 
-		     Datenkompression
+Darstellungsschicht: transformiert Daten in Standardformate (JPEG, BCD, ASCII-Text,...); neben Interpretation und Umsetzung der Daten auch 
+		     Verschlüsselung und Datenkompression
 
-Anwendungsschicht: Dienste, die Anwendungssoftware direkt unterstützen (Software für Filetransfer, Datenbankzugriffe oder E-Mail); diese Schicht ist der Punkt,
-		   an dem ANwendungsprogramme, die außerhalb des Computers kommunizieren müssen, auf Netzwerkdienste zugreifen; definiert außerdem Prozesse
-		   für Benutzerauthentifizierung
+Anwendungsschicht: Dienste, die Anwendungssoftware direkt unterstützen (Software für Filetransfer, Datenbankzugriffe oder E-Mail); diese 
+		   Schicht ist der Punkt, an dem ANwendungsprogramme, die außerhalb des Computers kommunizieren müssen, auf Netzwerkdienste 
+		   zugreifen; definiert außerdem Prozesse für Benutzerauthentifizierung
 
 
 
