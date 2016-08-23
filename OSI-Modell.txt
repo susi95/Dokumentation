@@ -47,4 +47,4 @@ Anwendungsschicht: Dienste, die Anwendungssoftware direkt unterstützen (Softwar
 
 
 WICHTIG!!!
-Das Modell beschreibt nur, was getan werden soll, jedoch nicht, wie es getan wird
+Das Modell beschreibt nur, was getan werden soll, jedoch nicht, wie es getan wird!!
