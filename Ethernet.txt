@@ -2,7 +2,62 @@ Ethernet
 
 - Technik, die Software und Hardware für kabelgebundene Datennetze spezifiziert, welche ursprünglich für lokale Datennetze gedacht war 
 - wird auch als LAN-Technik bezeichnet
-- ermöglicht Datenaustausch in Form von Datenframes (Protocol Data Unit = kompletter Satz Daten und Verwaltungsinformationen au einer Schicht des OSI-Modells)
+- ermöglicht Datenaustausch in Form von Datenframes (Protocol Data Unit = kompletter Satz Daten und Verwaltungsinformationen auf einer Schicht des OSI-Modells)
   zwischen den Geräten, die in einem lokalen Netzwerk verbunden sind
 - Übertragungsraten: 10 Mbit/s, 100 Mbit/s (Fast Ethernet), 1000 Mbit/s (Gigabit Ehternet), 10 Gbit/s, 40 Gbit/s und 100 Gbit/s
 - mit Glasfasern über 10 km Reichweite
+
+Heutzutage wird fast ausschließlich Ethernet-Datenblockformat Ethernet-II nach IEEE 802.3 verwendet
+Aufbau:
+
+1. Präambel und SFD
+- Präambel besteht aus einer sieben Byte langen, alternierenden Bitfolge, auf diese folgt der SFD (Start Frame Delimiter) mit der Bitfolge "10101011"
+- eigentlich unnötig, da moderen drahtgebundene Netzwerkarchitekturen stern- oder ringförmig sind und dauerhaft eingeschwungene Punkt-zu-Punkt-Verbindungen
+  zwischen Endteilnehmern und Netzwerkverteilern (Bridges, Switches) verwenden, die Paketgrenzen in anderer Form signalisieren
+
+
+2. Ziel- und Quell-MAC-Adresse
+- Zieladresse identifiziert Netzwerkstation, die die Daten empfangen soll (kann auch Multicast- oder Broadcastadresse sein)
+- Quelladresse identifiziert Sender 
+- jede MAC-Adresse hat eine Länge von sechs Bytes bzw 48 Bit
+- zwei Bit der MAC-Adresse werden zur Klassifizierung verwendet
+- erstes übertragenes Bit (Bit 0 des ersten Bytes) entscheidet, ob es Unicast- (0) oder 
+  Broadcast-/Multicast-Adresse (1) ist
+- zweites übertragenes Bit (Bit 1 des ersten Bytes) entscheidet, ob restliche Bit der MAC-Adresse global (0) oder lokal (1) administriert werden
+
+
+3. VLAN-Tag
+- vier Bytes
+- ersten beiden Bytes enthalten Konstante 0x8100, die Tagged-MAC-Frame als solchen kenntlich machen
+- 0x8100 kann man auch als Ethertype ansehen, da im Basic-MAC-Frame an dieser Position das Feld Ethertype stehen würde
+- allerdings folgt nach dem Tag der eigentliche Ethertype
+- in den nächsten beiden Bytes stehen 3 Bit für Priorität (0 niedrigste, 7 höchste Priorität), ein Bit CFI (Canonical Format Indicator), das für
+  Kompatibilität zwischen Ethernet und Token Ring sorgt, sowie 12 Bit für die VLAN-ID
+- an VLAN-Tag schließt Ethertype an (Wert ungleich 0x8100)
+
+
+4. Typ-Feld (Ethertype)
+- gibt Auskunft über verwendetes Protokoll der nächsthöheren Schicht der Nutzdaten
+- Werte sind größer als 0x0600
+
+
+5. Nutzdaten
+- pro Datenblock Übertragung von maximal 1500 Bytes an Nutzdaten
+- Nutzdaten werden von unter Typ angegebenen Protokoll interpretiert
+- Datenbytes werden in aufsteigender Byte-Reihenfolge übertragen
+
+
+6. PAD-Feld
+- bringt Ethernet-Frame auf erforderliche Minimalgröße von 64 Byte
+- Präambel und SFD werden bei der Länge nicht mitgezählt
+- wird erforderlich, wenn als Nutzdaten weniger als 46 bzw. 42 Bytes (ohne bzs mit VLAN-Tag) zu übertragen sind
+- das in Type angegebene Protokoll muss dafür sorgen, dass die als PAD angeführten Bytes nicht interpretiert werden (hält üblicherweise eine eigene 
+  Nutzdaten-Längenangabe bereit)
+
+
+7. FCS (Frame Check Sequence)
+- stellt eine 32-Bit-CRC-Prüfsumme dar 
+- CRC = Zyklische Redundanzprüfung = Verfahren zur Bestimmung eines Prüfwerts für Daten, um Fehler bei der Übertragung oder Speicherung erkennen zu können
+- FCS wird über eigentlichen Frame berechnet (beginnend mit Ziel-MAC-Adresse und endend mit PAD-Feld, Präambel, SFD und FCS sind nicht enthalten)
+- wenn Paket beim Sender erstellt wird, wird CRC-Berechnung durchgeführt und Prüfsumme an Datenblock gehängt, Empfänger führt nach Erhalt gleiche 
+  Berechnung durch (falls keine Übereinstimmung der Prüfsummen wird Datenbloc weggeworfen)
