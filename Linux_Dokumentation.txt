@@ -30,7 +30,7 @@ in Firefox: localhost/wordpress/ -> Anleitung folgen
 
 mittels Let's Encrypt kostenloses SSL-Zertifikat erstellen, um eigene Website zu verschlüsseln
 Git installieren: sudo apt-get install git
-Python installieren (prüft Voraussetzungen;meldet, wenn etwas fehlt)   	sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7
+Python installieren (prüft Voraussetzungen; meldet, wenn etwas fehlt)   sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7
 									sudo apt-get update
 									sudo apt-get install python2.7
 git clone https://github.com/letsencrypt/letsencrypt
