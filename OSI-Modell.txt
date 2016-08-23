@@ -12,7 +12,6 @@ OSI-Schichten-Modell
 Same-Layer Interaction = wenn zwei Computer miteinander kommunizieren, unterstellt die Software jeder Schicht, dass sie genau 
 mit derselben Schicht des anderen Computers kommuniziert
 
-
 7. Schicht: Anwendungsschicht
 6. Schicht: Darstellungsschicht
 5. Schicht: Kommunikationssteuerungsschicht
