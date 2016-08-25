@@ -1,0 +1,14 @@
+HTTP = Hypertext Transfer Protocol
+
+- zustandsloses Protokoll (Informationen aus früheren Anforderungen gehen verloren)
+- überträgt Daten auf der Anwendungsschicht über ein Rechnernetz
+- hauptsächlich dafür verwendet, dass Websiten im World Wide Web auf einen Webbrowser geladen werden können
+- wird aber auch als allgemeines Datenübertragungsprotokoll eingesetzt
+- Aktuelle Version: HTTP/2
+
+Eigenschaften:
+- wird der Anwendungsschicht (7.Schicht) des OSI-Modells zugeorndet
+- Informationen, die im Webbrowser übertragen werden, können auf allen Rechnern und Poutern gelesen werden
+- wird zunehmend zum Austausch verschiedener Daten verwendet
+- zur Kommunikation ist HTTP auf ein zuverlässiges Transportprotokoll angewiesen, hierfür wird fast immer TCP verwendet
+
