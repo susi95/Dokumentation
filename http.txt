@@ -12,3 +12,16 @@ Eigenschaften:
 - wird zunehmend zum Austausch verschiedener Daten verwendet
 - zur Kommunikation ist HTTP auf ein zuverlässiges Transportprotokoll angewiesen, hierfür wird fast immer TCP verwendet
 
+TCP = Transmission Control Protocol
+- Netzwerkprotokoll, dass definiert, auf welche Art und Weise Computer Daten austauschen
+
+
+
+
+
+
+HTTPS = Hypertext Transfer Protocol Secure
+
+- Kommunikationsprotokoll, um Daten im World Wide Web abhörsicher zu übertragen
+- wird zur Herstellung von Vertraulichkeit und Integrität in der Kommunikation zwischen Webserver und Webbrowser im WWW verwendet
+  (u.a. durch Verschlüsselung und Authentifizierung erreicht) 
