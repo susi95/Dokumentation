@@ -18,10 +18,19 @@ TCP = Transmission Control Protocol
 
 
 
-
-
 HTTPS = Hypertext Transfer Protocol Secure
 
 - Kommunikationsprotokoll, um Daten im World Wide Web abhörsicher zu übertragen
 - wird zur Herstellung von Vertraulichkeit und Integrität in der Kommunikation zwischen Webserver und Webbrowser im WWW verwendet
   (u.a. durch Verschlüsselung und Authentifizierung erreicht) 
+
+
+
+
+SSL = Secure Sockets Layer
+TLS = Transport Layer Security
+
+- SSL ist Vorgängerversion von TLS
+- hybrides Verschlüsselungsprotokoll zur sicheren Datenübertragung im Internet
+- aktuelle Version: TLS 1.2
+- vor allem mit HTTPS eingesetzt
