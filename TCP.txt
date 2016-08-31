@@ -1,0 +1,19 @@
+TCP = Transmission Control Protocol
+
+- Netzwerkprotokoll, dass definiert, auf welche Art und Weise Daten übertragen werden sollen
+- zuverlässiges, verbindungsorientiertes, paketvermittelndes Transportprotokoll (Teil der Grundlage des Internets)
+- Gegenteil ist UDP (verbindungsloses USER DATAGRAM PROTOCOL)
+- stellt Verbindung zwischen zwei Endpunkten einer Netzverbindung her
+- TCP setzt in den meisten Fällen auf IP auf (TCP/IP-Protokoll)
+- fast ausschließlich für WWW, EMail und andere Netzdienste verwendet
+- angenehme Eigenschaften wie > Datenverluste werden erkannt und behoben
+			      > Datenübertragung in beide Richtungen möglich
+			      > Verhinderung von Netzüberlastung
+
+- Verbindung wird durch 4 Werte definiert: > Quell-IP-Adresse
+					   > Quell-Port
+					   > Ziel-IP-Adresse
+					   > Ziel-Port
+...................................................................................................................
+
+
