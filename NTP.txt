@@ -1,0 +1,8 @@
+NTP = Network Time Protocol
+
+- Standard zur Synchronisierung von Uhren in Computersystemen über paketbasierte Kommunikationsnetze
+- verwendet verbindungsloses Transportprotokoll UDP
+- ermöglicht zuverlässige Zeitangabe über Netzwerke mit variabler Paketlaufzeit
+- bezeichnet im allgemeinen Sprachgebrauch sowohl die Software-Referenzimplementierung als auch das Protokoll
+- vereinfachte Version des NTP ist das SNTP (Simple Network Time Protocol)
+ 
