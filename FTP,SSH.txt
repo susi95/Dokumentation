@@ -7,10 +7,11 @@ FTP = File Transfer Protocol
   clientgesteuert zwischen 2 FTP-Servern zu übertragen (File Exchange Protocol)
 - mit FTP können Verzeichnisse angelegt und ausgelegt werden, genau so wie umbenannt und gelöscht werden
 - für Steuerung und Datenübertragung werden separate Verbindungen genutzt:
-  < FTP-Sitzung beginnt, indem vom Client zum Control Port des Servers (Standard-Port ist Port 21) eine
+ ...FTP-Sitzung beginnt, indem vom Client zum Control Port des Servers (Standard-Port ist Port 21) eine
     TCP-Verbindung aufgebaut wird; durch diese Verbindung werden Befehle zum Server gesendet; mit Statuscode
     (oft angehängter, erklärter Text) antwortet Server auf jeden Befehl; meisten Befehle erst nach erfolgreicher
-    Authentifizierung zulässig                                                                                   >
+    Authentifizierung zulässig...
+
 Verbindungsarten:
 1. Aktives FTP
 - Client öffnet zufälligen Port, teilt dem Server diesen und eigene IP-Adresse mittels PORT- oder des EPRT-Kommandos
