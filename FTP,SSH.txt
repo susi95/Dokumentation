@@ -1,0 +1,45 @@
+FTP = File Transfer Protocol
+
+- zustandsbehaftetes Netzwerkprotokoll
+- dient zur Übertragung von Dateien über IP-Netzwerke
+- gehört zur 7.Schicht (Anwendungsschicht) des OSI-Modells
+- wird benutzt, um Dateien vom Server zum Client (Download), vom Client zum Server (Upload) oder 
+  clientgesteuert zwischen 2 FTP-Servern zu übertragen (File Exchange Protocol)
+- mit FTP können Verzeichnisse angelegt und ausgelegt werden, genau so wie umbenannt und gelöscht werden
+- für Steuerung und Datenübertragung werden separate Verbindungen genutzt:
+  < FTP-Sitzung beginnt, indem vom Client zum Control Port des Servers (Standard-Port ist Port 21) eine
+    TCP-Verbindung aufgebaut wird; durch diese Verbindung werden Befehle zum Server gesendet; mit Statuscode
+    (oft angehängter, erklärter Text) antwortet Server auf jeden Befehl; meisten Befehle erst nach erfolgreicher
+    Authentifizierung zulässig                                                                                   >
+Verbindungsarten:
+1. Aktives FTP
+- Client öffnet zufälligen Port, teilt dem Server diesen und eigene IP-Adresse mittels PORT- oder des EPRT-Kommandos
+  mit
+- normalerweise Port des Clients, der jenseits von 1023 liegt
+ODER
+- Server, der in den passiven Mode geschaltet wurde, also auf eine Verbindung wartet (wird FXP genannt)
+- FXP ist jedoch bei meisten FTP-Servern aufgrund der Sicherheit standardmäßig deaktiviert 
+- Datenübertragung erfolgt dabei über Port 20, Kommunikation mit Befehlen erfolgt über Control Port
+
+2. Passives FTP
+- Client sendet ein PASV- oder ein EPSV-Kommando, Server öffnet einen Port und übermittelt diesen inklusive IP-Adresse
+  an den Client
+- Client benutzt Port jenseits von 1023, Server benutzt vorher an den Client gesendeten Port
+- wird benutzt, wenn Server keine Verbindung zum Client aufbauen kann
+- z.B. wenn Client hinter einem Router liegt, der die Adresse des Clients mittels NAT umschreibt , oder wenn Firewall
+  das Netzwerk des Clients vor Zugriffen von außerhalb schützt
+
+
+
+SSH = Secure Shell
+
+- sowohl ein Netzwerkprotokoll als auch Programme, mit der man auf eine sichere Art und Weise eine verschlüsselte
+  Netzwerkverbindung mit einem entfernten Gerät herstellen kann, werden als SSH bezeichnet
+- Methode wird häufig verwendet, um lokal eine entfernte Kommandozeile verfügbar zu machen (auf einer lokalen
+  Konsole werden die Ausgaben der entfernten Konsole ausgegeben und die lokalen Tastatureingaben werden an den entfernten
+  Rechner gesendet)
+- wird z-B. bei der Fernwartung eines in einem entfernten Rechenzentrum stehenden Servers genutzt
+- SSH wurde TCP-Port 22 zugeordnet
+Verwendung:
+- ermöglicht sichere, authentifizierte und verschlüsselte Verbindung zwischen zwei Rechnern über unsicheres Netzwerk
+
