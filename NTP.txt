@@ -6,3 +6,14 @@ NTP = Network Time Protocol
 - bezeichnet im allgemeinen Sprachgebrauch sowohl die Software-Referenzimplementierung als auch das Protokoll
 - vereinfachte Version des NTP ist das SNTP (Simple Network Time Protocol)
  
+Wie funktioniert NTP bei virtuellen Maschinen?
+- die Zeit der virtuellen Maschine wird über einen NTP-Server synchronisiert, wobei keine Default-Zeitserver verwendet
+  werden sollten!
+
+Virtuelle Maschine:
+- Nachbildung eines Rechnersystems
+- bildet die Rechnerarchitektur eines real in Hardware existierenden oder hypothetischen Rechners nach
+- Hypervisor = abstrahierende Schicht zwischen realem Rechner und virtueller Maschine
+- Anwendung des Hypervisor erfolgt rein hardwarebasierend, rein softwarebasierend oder aus einer Kombination beider
+- Hypervisor erlaubt Betrieb mehrerer virtueller Maschinen auf einem physischen Rechner
+
