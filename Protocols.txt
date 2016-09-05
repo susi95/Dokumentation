@@ -74,15 +74,22 @@ UTP = User Datagram Protocol
 
 Unterschiede TCP/UDP:
 
-     __________TCP__________|__________UDP__________
-     -sicheres Protokoll    |-unsicheres Protokoll
-     -Datenübertragung mit  |-Datenübertragung ohne
-      Sicherung der Daten   | ohne Sicherung der
-      und Überwachung       | Daten und ohne Über-
-                            | wachung
-     -für WWW,Email,andere  |-wird hauptsächlich von
-      Netzdienste verwendet | DNS verwendet
-  
+     _______________TCP_______________|_______________UDP_______________
+     -sicheres Protokoll              |-unsicheres Protokoll
+     -Datenübertragung mit Sicherung  |-Datenübertragung ohne Sicherung
+      der Daten und Überwachung       | der Daten und ohne Überwachung
+     -für WWW, Email und andere       |-wird hauptsächlich von DNS
+      Netzdienste verwendet           | verwendet
+     -baut Verbindung zwischen Sender |-es wird keine Verbindung 
+      und Empfänger auf und löscht    | aufgebaut, unabhängig von allen
+      diese Verbindung nach der       | anderen werden Daten übertragen
+      Datenübertragung wieder         |
+     -Empfänger sendet Datenempfangs- |-keine Empfangsbestätigung der
+      bestätigung an Sender           | Daten
+     -relativ langsam, da erst	      |-Datenaustausch relativ schnell,
+      Verbindung aufgebaut werden     | vor allem bei kleinen Datenmengen
+      muss			      | hilfreich
+
 
 
 
