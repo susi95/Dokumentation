@@ -61,7 +61,28 @@ TCP = Transmission Control Protocol
 - Verbindung wird durch 4 Werte definiert: > Quell-IP-Adresse
 					   > Quell-Port
 					   > Ziel-IP-Adresse
-> Ziel-Port
+					   > Ziel-Port
+
+
+
+UTP = User Datagram Protocol
+
+- verbindungsloses, unsicheres, nicht-zuverlässiges, ungeschütztes Datenprotokoll
+- übermittelt Daten ohne diese zu sichern -> keine Garantie, dass Daten auch ankommen
+- DNS verwendet UTP, um Netzwerkbelastung gering zu halten
+
+
+Unterschiede TCP/UDP:
+
+     __________TCP__________|__________UDP__________
+     -sicheres Protokoll    |-unsicheres Protokoll
+     -Datenübertragung mit  |-Datenübertragung ohne
+      Sicherung der Daten   | ohne Sicherung der
+      und Überwachung       | Daten und ohne Über-
+                            | wachung
+     -für WWW,Email,andere  |-wird hauptsächlich von
+      Netzdienste verwendet | DNS verwendet
+  
 
 
 
