@@ -1,0 +1,38 @@
+Eigenes SSL-Zertifikat erstellen:
+
+
+Zunächst erstellt man die Certificate Authority (CA) zusammen mit einem Private Key.
+
+Private Key: openssl genrsa -aes256 -out ca-key.pem 2048
+
+Der Schlüssel hat eine länge von 2048 Bit. "-aes256" ermöglicht, dass der Schlüssel mit einem Passwort geschützt wird.
+Den Schlüssel oder das PW darf man nicht verlieren, da sonst die Gefahr droht, dass fremde Personen über das CA 
+gefälschte Zertifikate erstellen können. 
+
+Root-Zertifikat: openssl req -x509 -new -nodes -extensions v3_ca -key ca-key.pem -days 1024 -out ca-root.pem -sha512
+
+Während der Generierung der CA werden das PW des Schlüssels und einige andere Atrribute abgefragt.
+
+Als nächstes muss das Root-Zertifikat auf den Clients importiert werden. Im Falle von Ubuntu, was hier 
+ausschließlich benutzt wird, geht man dabei folgendermaßen vor:
+
+sudo cp ca-root-pem /usr/share/ca-certificates/myca-root.crt
+sudo dpkg-reconfigure ca-certificates
+
+
+Nun kann man ein Zertifikat erstellen.
+Man erstellt als erstes einen Ordner, in dem man die Zertifikate sammelt.
+
+mkdir /etc/apache2/ssl/
+
+Dann erstellt man einen Schlüssel für das Zertifikat in dem Ordner.
+
+cd /etc/apache2/ssl/
+openssl genrsa -out zertifikat-key.pem 4096
+
+Hier muss man nun das PW des oben erstellten Schlüssels angeben und bei "Common Name" muss der HOSTNAME des 
+Servers eingetragen werden.
+
+openssl req -new -key zertifikat-key.pem -out zertifikat.csr -sha512
+
+Mit diesem Befehl erstellt man eine Zertifikatsanfrage, die von der CA verarbeitet werden kann. 
