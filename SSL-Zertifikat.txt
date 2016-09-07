@@ -35,4 +35,60 @@ Servers eingetragen werden.
 
 openssl req -new -key zertifikat-key.pem -out zertifikat.csr -sha512
 
-Mit diesem Befehl erstellt man eine Zertifikatsanfrage, die von der CA verarbeitet werden kann. 
+Mit diesem Befehl erstellt man eine Zertifikatsanfrage, die von der CA verarbeitet werden kann. Danach wird 
+noch der Public Key erstellt, der 365 Tage lang gültig ist.
+
+openssl x509 -req -in zertifikat.csr -CA ca-root.pem -CAkey ca-key.pem -CAcreateserial -out zertifikat-pub.pem -days 365 -sha512
+
+Die Zertifizierungsanfrage "zertifikat.csr" kann gelöscht werden, da man sie nicht mehr benötigt.
+Nun bleiben 4 Dateien übrig: zertifikat-key.pem
+			     zertifikat-pub.pem
+			     ca-key.pem
+			     ca-root.pem
+
+Um das Zertifikat nun zu aktivieren, damit die Website geschützt ist, geht man wie folgt vor:
+(Ich beziehe mich auf einen Apache2-Webserver)
+
+a2enmod ssl
+service apache2 restart
+
+Mit diesen Befehlen läd mal sich das Apache-Modul "ssl" runter, dass man für die Zertifikate benötigt, und 
+startet Apache neu.
+Nun legt man eine neue Vim-Datei an, in der man die entsprechende Konfiguration einträgt.
+
+cd /etc/apache2/sites-available/
+vim SSL-Zertifikat.conf
+
+Dort speichert man folgendes hinein:
+
+
+<VirtualHost *:443>
+    ServerName beispiel.de
+    DocumentRoot /var/www/html/wordpress
+
+
+    SSLEngine on
+    SSLCertificateFile    /etc/apache2/ssl/zertifikat-pub.pem
+    SSLCertificateKeyFile /etc/apache2/ssl/zertifikat-key.pem
+</VirtualHost>
+
+
+Danach speichert man es ab und nun sollte das Zertifikat endlich funktionieren und die Website ist
+abhörsicher.
+
+Um das SSL zu verstärken kann man noch in die Vim-Datei folgendes ergänzen:
+
+
+SSLProtocol All -SSLv2 -SSLv3
+SSLCompression off
+SSLHonorCipherOrder On
+SSLCipherSuite EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384:EECDH+aRSA+SHA256:EECDH:+CAMELLIA256:+AES256:+CAMELLIA128:+AES128:+SSLv3:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!PSK:!DSS:!RC4:!SEED:!ECDSA:CAMELLIA256-SHA:AE256-SHA:CAMELLIA128-SHA:AES128-SHA
+Header add Strict-Transport-Security "max-age=15768000"
+
+
+Nun muss APache nur noch neu geladen werden.
+
+service apache2 reload
+
+
+Nun kann man seine Website auch über https erreichen.
