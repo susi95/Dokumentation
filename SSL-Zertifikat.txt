@@ -3,42 +3,42 @@ Eigenes SSL-Zertifikat erstellen:
 
 Zunächst erstellt man die Certificate Authority (CA) zusammen mit einem Private Key.
 
-Private Key: openssl genrsa -aes256 -out ca-key.pem 2048
+---------->  openssl genrsa -aes256 -out ca-key.pem 2048  <----------
 
 Der Schlüssel hat eine länge von 2048 Bit. "-aes256" ermöglicht, dass der Schlüssel mit einem Passwort geschützt wird.
 Den Schlüssel oder das PW darf man nicht verlieren, da sonst die Gefahr droht, dass fremde Personen über das CA 
 gefälschte Zertifikate erstellen können. 
 
-Root-Zertifikat: openssl req -x509 -new -nodes -extensions v3_ca -key ca-key.pem -days 1024 -out ca-root.pem -sha512
+---------->  openssl req -x509 -new -nodes -extensions v3_ca -key ca-key.pem -days 1024 -out ca-root.pem -sha512  <----------
 
 Während der Generierung der CA werden das PW des Schlüssels und einige andere Atrribute abgefragt.
 
 Als nächstes muss das Root-Zertifikat auf den Clients importiert werden. Im Falle von Ubuntu, was hier 
 ausschließlich benutzt wird, geht man dabei folgendermaßen vor:
 
-sudo cp ca-root-pem /usr/share/ca-certificates/myca-root.crt
-sudo dpkg-reconfigure ca-certificates
+---------->  sudo cp ca-root-pem /usr/share/ca-certificates/myca-root.crt  <----------
+---------->  sudo dpkg-reconfigure ca-certificates  <----------
 
 
 Nun kann man ein Zertifikat erstellen.
 Man erstellt als erstes einen Ordner, in dem man die Zertifikate sammelt.
 
-mkdir /etc/apache2/ssl/
+---------->  mkdir /etc/apache2/ssl/  <----------
 
 Dann erstellt man einen Schlüssel für das Zertifikat in dem Ordner.
 
-cd /etc/apache2/ssl/
-openssl genrsa -out zertifikat-key.pem 4096
+---------->  cd /etc/apache2/ssl/  <----------
+---------->  openssl genrsa -out zertifikat-key.pem 4096  <----------
 
 Hier muss man nun das PW des oben erstellten Schlüssels angeben und bei "Common Name" muss der HOSTNAME des 
 Servers eingetragen werden.
 
-openssl req -new -key zertifikat-key.pem -out zertifikat.csr -sha512
+---------->  openssl req -new -key zertifikat-key.pem -out zertifikat.csr -sha512  <----------
 
 Mit diesem Befehl erstellt man eine Zertifikatsanfrage, die von der CA verarbeitet werden kann. Danach wird 
 noch der Public Key erstellt, der 365 Tage lang gültig ist.
 
-openssl x509 -req -in zertifikat.csr -CA ca-root.pem -CAkey ca-key.pem -CAcreateserial -out zertifikat-pub.pem -days 365 -sha512
+---------->  openssl x509 -req -in zertifikat.csr -CA ca-root.pem -CAkey ca-key.pem -CAcreateserial -out zertifikat-pub.pem -days 365 -sha512  <----------
 
 Die Zertifizierungsanfrage "zertifikat.csr" kann gelöscht werden, da man sie nicht mehr benötigt.
 Nun bleiben 4 Dateien übrig: zertifikat-key.pem
@@ -49,15 +49,15 @@ Nun bleiben 4 Dateien übrig: zertifikat-key.pem
 Um das Zertifikat nun zu aktivieren, damit die Website geschützt ist, geht man wie folgt vor:
 (Ich beziehe mich auf einen Apache2-Webserver)
 
-a2enmod ssl
-service apache2 restart
+---------->  a2enmod ssl  <----------
+---------->  service apache2 restart  <----------
 
 Mit diesen Befehlen läd mal sich das Apache-Modul "ssl" runter, dass man für die Zertifikate benötigt, und 
 startet Apache neu.
 Nun legt man eine neue Vim-Datei an, in der man die entsprechende Konfiguration einträgt.
 
-cd /etc/apache2/sites-available/
-vim SSL-Zertifikat.conf
+---------->  cd /etc/apache2/sites-available/  <----------
+---------->  vim SSL-Zertifikat.conf  <----------
 
 Dort speichert man folgendes hinein:
 
@@ -88,7 +88,7 @@ Header add Strict-Transport-Security "max-age=15768000"
 
 Nun muss APache nur noch neu geladen werden.
 
-service apache2 reload
+---------->  service apache2 reload  <----------
 
 
 Nun kann man seine Website auch über https erreichen.
