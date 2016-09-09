@@ -1,0 +1,28 @@
+Switch auf Werkseinstellungen zurücksetzen:
+1. Strom aus (Stecker ziehen)
+2. Modetaste so lange gedrückt halten, bis in Bootprompt 
+3. flash_init
+4. del flash:config.text
+5. del flash:vlan.dat
+6. boot
+
+
+kein Konfigurationsdialog
+
+
+Um in Adminmodus zu gelangen: enable (von > zu #)
+
+
+Um in Switchkonfigmodus zu kommen:
+-> configure terminal
+
+Switch eigenen Namen geben:
+-> hostname (Typ_STandort_Name)
+
+um in Normalmodus zu kommen (da man in Konfigmodus nicht speichern kann):
+-> exit
+
+abspeichern:
+-> write
+
+Switch konfigurieren, zwischendurch abspeichern
