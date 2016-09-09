@@ -26,3 +26,7 @@ abspeichern:
 -> write
 
 Switch konfigurieren, zwischendurch abspeichern
+Immer darauf achten, ob man in einen anderen Modus gewechselt hat und wenn ja, wieder -> exit um aus den Modus zu gehen und in normalen
+Konfigmodus weiter zu konfigurieren
+
+
