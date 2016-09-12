@@ -1,0 +1,7 @@
+VirtualBox wird installiert mit:
+
+----------> sudo apt-get virtualbox
+
+Danach Virtual Box starten, auf NEU und System so einstellen, wie man will
+VM starten, Datenträger muss im System sein, sodass Betriebssystem booten kann
+
