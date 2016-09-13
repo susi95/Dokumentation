@@ -86,7 +86,10 @@ SSLCipherSuite EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384:EECDH+a
 Header add Strict-Transport-Security "max-age=15768000"
 
 
-Nun muss APache nur noch neu geladen werden.
+Hierdurch wird dem Browser klar gemacht, dass er erst die stärkstmöglich angegebenen Verschlüsselungsalgorithmen
+verwenden soll und wenn er diese nicht kennt, erst dann auf die nächst schwächeren zurückzugreifen.
+
+Nun muss Apache nur noch neu geladen werden.
 
 ---------->  service apache2 reload  <----------
 
