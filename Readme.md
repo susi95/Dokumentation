@@ -27,7 +27,7 @@ $ ps -aux                                               - see all running proces
 #
 $ man ..                                                - shows more about a command	
 #
-$ free -f						- display RAM
+$ free -m						- display RAM
 #
 
 
