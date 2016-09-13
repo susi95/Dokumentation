@@ -26,6 +26,9 @@ $ du -sh folder1                                        - size of a folder in me
 $ ps -aux                                               - see all running processes on the system
 #
 $ man ..                                                - shows more about a command	
+#
+$ free -f						- display RAM
+#
 
 
 
