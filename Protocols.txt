@@ -75,7 +75,6 @@ UTP = User Datagram Protocol
 Unterschiede TCP/UDP:
 
      _______________TCP_______________|_______________UDP_______________
-     -sicheres Protokoll              |-unsicheres Protokoll
      -Datenübertragung mit Sicherung  |-Datenübertragung ohne Sicherung
       der Daten und Überwachung       | der Daten und ohne Überwachung
      -für WWW, Email und andere       |-wird hauptsächlich von DNS
@@ -124,3 +123,10 @@ TLS = Transport Layer Security
 - hybrides Verschlüsselungsprotokoll zur sicheren Datenübertragung im Internet
 - aktuelle Version: TLS 1.2
 - vor allem mit HTTPS eingesetzt
+
+
+
+SIP = Session Initiation Protocol
+
+- dient zum Aufbau, zur Steuerung und Abbau einer Kommunikationssitzung zwischen einem oder mehreren Teilnehmern
+- in IP-Telefonie häufig angewantes Protokoll
