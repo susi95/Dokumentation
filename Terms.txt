@@ -1,9 +1,5 @@
 Drei-Wege-Handschlag
 
-Vorwissen: Zwei-Armeen-Problem
-	   - 
-	   - 
-	   - 
 - Verfahren zum Aufbau verlustfreier Datenübertragungen zwischen zwei Instanzen
 - tritt in Nachrichtentechnik dann auf, wenn zwischen Kommunikationspartnern unzuverlässiger Übertragungskanal 
   vorliegt
@@ -24,4 +20,21 @@ Vorwissen: Zwei-Armeen-Problem
  
 Peer-to-Peer
 
+- Rechner-Rechner-Verbindung
+- im reinen Peer-to-Peer-Netz sind alle Rechner gleichberechtigt und können Dienste in Anspruch nehmen und zur
+  Verfügung stellen
+- in mordernen Netzwerken werden Teilnehmer je nach Qualifikation in Gruppen eingeteilt, um speziefische
+  Aufgaben zu übernehmen
+- besten Rechner aus dem Netz übernehmen die Organisation und Suchfunktion
+- System ist selbstorganisierend 
 
+
+
+
+
+Server-Client-Modell
+
+- Möglichkeit, Aufgaben und Dienstleistungen innerhalb eines Netzwerkes zu verteilen
+- Aufgaben werden von Programmen erledigt, die in Client und Server unterteilt werden
+- Client kann auf Wunsch Dienst von Server anfordern
+- Server beantwortet Anfrage (Server kann für mehrere Clients bereitgestellt werden)
