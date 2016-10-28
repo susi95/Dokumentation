@@ -5,3 +5,22 @@ VirtualBox wird installiert mit:
 Danach Virtual Box starten, auf NEU und System so einstellen, wie man will
 VM starten, Datenträger muss im System sein, sodass Betriebssystem booten kann
 
+
+
+
+"Projekt" Netzwerk erstellen:
+
+- Windows 8.1 und Windows Server 2008 R2 installiert
+- Server soll 2 virtuelle Festplatten besitzen (eine für das System (30GB) und eine für Daten (50GB))
+- bei der VM über File -> Preferences -> Network ein neues NAT Network hinzufügen
+- Bei Server unter Settings -> Network: Adapter 1 über NAT Network laufen lassen
+					Adapter 2 über NAT laufen lassen
+					Adapter 3 über Internal Network laufen lassen
+- Client genau so konfigurieren, nur NAT Network wegglassen
+- Server booten lassen und Updates installieren lassen
+- in Server-Manager Name für Server definieren
+- in Netzwerkverbindungen in Adaptereinstellungen gehen, bei allen Adaptern IPv6 Haken wegmachen
+- bei Adapter 3 (LAN-Verbindung 3) auf Eigenschaften -> Doppelklick auf IPv4 -> IP-Adresse, Subnetmaske und DNS-Server (soll er selbst sein) definieren
+- im Server-Manager die Rolle DHCP installieren:
+Rollen -> Rolle hinzufügen -> DHCP anhaken -> Installation folgen
+
