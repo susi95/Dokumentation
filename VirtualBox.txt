@@ -8,7 +8,7 @@ VM starten, Datenträger muss im System sein, sodass Betriebssystem booten kann
 
 
 
-"Projekt" Netzwerk erstellen:
+Eigenes Netzwerk erstellen:
 
 - Windows 8.1 und Windows Server 2008 R2 installiert
 - Server soll 2 virtuelle Festplatten besitzen (eine für das System (30GB) und eine für Daten (50GB))
@@ -20,7 +20,29 @@ VM starten, Datenträger muss im System sein, sodass Betriebssystem booten kann
 - Server booten lassen und Updates installieren lassen
 - in Server-Manager Name für Server definieren
 - in Netzwerkverbindungen in Adaptereinstellungen gehen, bei allen Adaptern IPv6 Haken wegmachen
-- bei Adapter 3 (LAN-Verbindung 3) auf Eigenschaften -> Doppelklick auf IPv4 -> IP-Adresse, Subnetmaske und DNS-Server (soll er selbst sein) definieren
+- bei Adapter 3 (LAN-Verbindung 3) auf Eigenschaften -> Doppelklick auf IPv4 -> IP-Adresse, Subnetmaske und DNS-Server 
+  (soll er selbst sein) definieren
 - im Server-Manager die Rolle DHCP installieren:
 Rollen -> Rolle hinzufügen -> DHCP anhaken -> Installation folgen
+- wenn DHCP installiert ist, muss es noch authorisiert werden
+Start -> Verwaltung -> DHCP -> Aktion -> Authorisierte Server verwalten -> eigenen Server hinzufügen
+- danach kann DHCP IP-Adressen verteilen
 
+
+AD (Active Directory) und DNS aktivieren:
+- Rolle AD Domänendienste und DNS wie oben bei DHCP aktivieren
+- Client muss auch konfiguriert werden
+- dazu mit Rechtsklick auf WIndowszeichen -> System
+- bei Einstellungen für Computernamen, Domänen und Arbeitsgruppen auf Einstellungen ändern...
+- unter der Kartei Computername auf "Ändern"
+- Domänenname hinzufügen, Client neu starten
+Start -> Verwaltung -> Active Directory-Benutzer und -Computer
+- neue Organisationseinheit "GPO" auf Domäne anlegen für GPOs
+- alle in der Organisationseinheit "Computers" befindlichen PCs, die die GPOs, die noch geändert werden,
+  übernehmen sollen, in "GPO" verschieben
+
+- in Gruppenrichtlinienverwaltung gehen
+- unter der Domäne findet man Ordner "GPO"
+- dort neues Gruppenrichtlinienobjekt erstellen
+- wenn erstellt, auf Objekt mit Rechtsklick gehen und bearbeiten
+- GPO aussuchen, die aktiviert werden soll (je nach Server und Verwendung verschieden)
