@@ -43,6 +43,8 @@ Start -> Verwaltung -> Active Directory-Benutzer und -Computer
 
 - in Gruppenrichtlinienverwaltung gehen
 - unter der Domäne findet man Ordner "GPO"
-- dort neues Gruppenrichtlinienobjekt erstellen
+- dort neues Gruppenrichtlinienobjekt erstellen (wenn man noch nicht weiß, welche GPO man aktivieren will,
+  dann einfach "Test" als Namen verwenden)
 - wenn erstellt, auf Objekt mit Rechtsklick gehen und bearbeiten
 - GPO aussuchen, die aktiviert werden soll (je nach Server und Verwendung verschieden)
+- GPO umbenennen, am besten danach, welche GPO ausgewählt wurde
