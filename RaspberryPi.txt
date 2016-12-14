@@ -1,0 +1,9 @@
+Configure RaspberryPi on Ubuntu:
+
+1. Download Rasbian on Terminal
+2. Look, what is mount: ~$ sudo mount
+-> SD-Card must be mounted
+3. umount the SD-Card: ~$ sudo umount "name_of_the_card"
+4. ~$ dd if=2016-11-25-raspbian-jessie-lite.img of=/dev/mmcblk0 bs=1M
+
+
